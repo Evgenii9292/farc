@@ -1,0 +1,23 @@
+def calculate_fat_percentage():
+    calories = float(input("Enter the number of calories in the food item: "))
+    fat_grams = float(input("Enter the number of fat grams in the food item: "))
+
+    if calories < 0 or fat_grams < 0:
+        print("\nCalories and fat grams cannot be less than 0!!")
+        return
+
+    fat_calories = fat_grams * 9
+    total_calories = calories
+
+    if fat_calories > total_calories:
+        print("\nError: Fat calories cannot exceed total calories!!")
+        return
+
+    fat_percentage = (fat_calories / total_calories) * 100
+
+    print(f"The percentage of calories from fat in the food item is {fat_percentage:.2f}%")
+
+    if fat_percentage <= 30:
+        print("The food item is considered low fat.")
+
+calculate_fat_percentage()
